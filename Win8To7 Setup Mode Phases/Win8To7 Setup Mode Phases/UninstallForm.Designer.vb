@@ -185,7 +185,7 @@ Partial Class UninstallForm
         Me.OptRestore.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OptRestore.Location = New System.Drawing.Point(61, 174)
         Me.OptRestore.Name = "OptRestore"
-        Me.OptRestore.Size = New System.Drawing.Size(378, 25)
+        Me.OptRestore.Size = New System.Drawing.Size(353, 25)
         Me.OptRestore.TabIndex = 7
         Me.OptRestore.TabStop = True
         Me.OptRestore.Text = "Revert to Windows Vista look and feel and remove"
@@ -338,7 +338,7 @@ Partial Class UninstallForm
         'LabelStatus
         '
         Me.LabelStatus.AutoSize = True
-        Me.LabelStatus.Location = New System.Drawing.Point(57, 307)
+        Me.LabelStatus.Location = New System.Drawing.Point(57, 142)
         Me.LabelStatus.Name = "LabelStatus"
         Me.LabelStatus.Size = New System.Drawing.Size(207, 17)
         Me.LabelStatus.TabIndex = 25
@@ -347,7 +347,7 @@ Partial Class UninstallForm
         'ProgressBar1
         '
         Me.ProgressBar1.BackColor = System.Drawing.SystemColors.Control
-        Me.ProgressBar1.Location = New System.Drawing.Point(61, 260)
+        Me.ProgressBar1.Location = New System.Drawing.Point(61, 95)
         Me.ProgressBar1.Maximum = 2
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(663, 32)
@@ -367,7 +367,7 @@ Partial Class UninstallForm
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(194, 223)
+        Me.Label19.Location = New System.Drawing.Point(58, 48)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(384, 17)
         Me.Label19.TabIndex = 1
@@ -377,7 +377,7 @@ Partial Class UninstallForm
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(341, 189)
+        Me.Label20.Location = New System.Drawing.Point(56, 12)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(117, 30)
         Me.Label20.TabIndex = 0
@@ -487,10 +487,10 @@ Partial Class UninstallForm
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(774, 611)
         Me.Controls.Add(Me.BackArea)
-        Me.Controls.Add(Me.PageTransform)
         Me.Controls.Add(Me.Page1)
         Me.Controls.Add(Me.PageConfirmRestore)
         Me.Controls.Add(Me.PageConfirmRemove)
+        Me.Controls.Add(Me.PageTransform)
         Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

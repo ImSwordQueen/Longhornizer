@@ -44,9 +44,10 @@
 
         'Configure Classic Explorer
         dwordchanges.Add(ToList("HKCU\Software\IvoSoft\ClassicExplorer", "ShowedToolbar", "1"))
-        stringchanges.Add(ToList("HKCU\Software\IvoSoft\ClassicExplorer", "TreeStyle", "XPSimple"))
+        stringchanges.Add(ToList("HKCU\Software\IvoSoft\ClassicExplorer\", "TreeStyle", "XPSimple"))
         dwordchanges.Add(ToList("HKCU\Software\IvoSoft\ClassicExplorer", "ShowCaption", "0"))
-        stringchanges.Add(ToList("HKCU\Software\IvoSoft\ClassicExplorer", "ShowUpButton", "DontShow"))
+        dwordchanges.Add(ToList("HKCU\Software\IvoSoft\ClassicExplorer", "ShowUpButton", "DontShow"))
+        stringchanges.Add(ToList("HKCU\Software\IvoSoft\ClassicExplorer\", "TreeStyle", "XPSimple"))
         dwordchanges.Add(ToList("HKCU\Software\IvoSoft\ClassicExplorer", "ShowFreeSpace", "1"))
         dwordchanges.Add(ToList("HKCU\Software\IvoSoft\ClassicExplorer", "ShareOverlay", "0"))
         dwordchanges.Add(ToList("HKCU\Software\IvoSoft\ClassicExplorer", "EnableMore", "1"))

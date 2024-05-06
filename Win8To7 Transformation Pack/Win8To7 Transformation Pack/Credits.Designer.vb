@@ -52,10 +52,12 @@ Partial Class Credits
         Me.Button16 = New System.Windows.Forms.Button()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.Label38 = New System.Windows.Forms.Label()
+        Me.Label39 = New System.Windows.Forms.Label()
         Me.Label40 = New System.Windows.Forms.Label()
         Me.Label41 = New System.Windows.Forms.Label()
         Me.Label42 = New System.Windows.Forms.Label()
         Me.Label43 = New System.Windows.Forms.Label()
+        Me.Label44 = New System.Windows.Forms.Label()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.Label47 = New System.Windows.Forms.Label()
         Me.Label48 = New System.Windows.Forms.Label()
@@ -87,8 +89,9 @@ Partial Class Credits
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label44 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -143,9 +146,9 @@ Partial Class Credits
         Me.Label4.Margin = New System.Windows.Forms.Padding(3)
         Me.Label4.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(375, 26)
+        Me.Label4.Size = New System.Drawing.Size(364, 26)
         Me.Label4.TabIndex = 3
-        Me.Label4.Text = "ImSwordQueen: The creator of the Longhornizer Transformation Pack"
+        Me.Label4.Text = "ImSwordKing: The creator of the Longhornizer Transformation Pack"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label6
@@ -205,9 +208,9 @@ Partial Class Credits
         Me.Label9.Margin = New System.Windows.Forms.Padding(3)
         Me.Label9.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(255, 26)
+        Me.Label9.Size = New System.Drawing.Size(244, 26)
         Me.Label9.TabIndex = 8
-        Me.Label9.Text = "ImSwordQueen: Improved the longhorn theme"
+        Me.Label9.Text = "ImSwordKing: Improved the longhorn theme"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label10
@@ -330,11 +333,11 @@ Partial Class Credits
         Me.Button7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Button7.Dock = System.Windows.Forms.DockStyle.Right
         Me.Button7.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button7.Location = New System.Drawing.Point(538, 0)
+        Me.Button7.Location = New System.Drawing.Point(443, 0)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(53, 26)
+        Me.Button7.Size = New System.Drawing.Size(148, 26)
         Me.Button7.TabIndex = 9
-        Me.Button7.Text = "Button"
+        Me.Button7.Text = "Support Ramen Software"
         Me.Button7.UseVisualStyleBackColor = True
         '
         'Label16
@@ -345,9 +348,9 @@ Partial Class Credits
         Me.Label16.Margin = New System.Windows.Forms.Padding(3)
         Me.Label16.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(69, 26)
+        Me.Label16.Size = New System.Drawing.Size(204, 26)
         Me.Label16.TabIndex = 8
-        Me.Label16.Text = "Placeholder"
+        Me.Label16.Text = "7+ Taskbar Tweaker: Ramen Software"
         Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel9
@@ -369,11 +372,11 @@ Partial Class Credits
         Me.Button9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Button9.Dock = System.Windows.Forms.DockStyle.Right
         Me.Button9.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button9.Location = New System.Drawing.Point(538, 0)
+        Me.Button9.Location = New System.Drawing.Point(509, 0)
         Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(53, 26)
+        Me.Button9.Size = New System.Drawing.Size(82, 26)
         Me.Button9.TabIndex = 9
-        Me.Button9.Text = "Button"
+        Me.Button9.Text = "Visit website"
         Me.Button9.UseVisualStyleBackColor = True
         '
         'Label18
@@ -384,9 +387,9 @@ Partial Class Credits
         Me.Label18.Margin = New System.Windows.Forms.Padding(3)
         Me.Label18.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(69, 26)
+        Me.Label18.Size = New System.Drawing.Size(365, 26)
         Me.Label18.TabIndex = 8
-        Me.Label18.Text = "Placeholder"
+        Me.Label18.Text = "Windows Desktop Gadgets: Gadgets Revived, Microsoft Corporation"
         Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label35
@@ -410,7 +413,7 @@ Partial Class Credits
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(591, 26)
         Me.Label36.TabIndex = 37
-        Me.Label36.Text = "ImSwordQueen (using resources by Microsoft Corporation)"
+        Me.Label36.Text = "ImSwordKing (using resources by Microsoft Corporation)"
         Me.Label36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel16
@@ -456,18 +459,31 @@ Partial Class Credits
         '
         Me.Label38.AutoSize = True
         Me.Label38.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label38.Location = New System.Drawing.Point(7, 655)
+        Me.Label38.Location = New System.Drawing.Point(7, 719)
         Me.Label38.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
         Me.Label38.Name = "Label38"
         Me.Label38.Size = New System.Drawing.Size(58, 17)
         Me.Label38.TabIndex = 39
         Me.Label38.Text = "Cursors:"
         '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label39.Location = New System.Drawing.Point(7, 616)
+        Me.Label39.Margin = New System.Windows.Forms.Padding(3)
+        Me.Label39.MinimumSize = New System.Drawing.Size(0, 26)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(591, 26)
+        Me.Label39.TabIndex = 40
+        Me.Label39.Text = "Ojas (using resources by Microsoft Corporation)"
+        Me.Label39.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'Label40
         '
         Me.Label40.AutoSize = True
         Me.Label40.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label40.Location = New System.Drawing.Point(7, 779)
+        Me.Label40.Location = New System.Drawing.Point(7, 843)
         Me.Label40.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
         Me.Label40.Name = "Label40"
         Me.Label40.Size = New System.Drawing.Size(80, 17)
@@ -478,7 +494,7 @@ Partial Class Credits
         '
         Me.Label41.AutoSize = True
         Me.Label41.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label41.Location = New System.Drawing.Point(7, 740)
+        Me.Label41.Location = New System.Drawing.Point(7, 804)
         Me.Label41.Margin = New System.Windows.Forms.Padding(3)
         Me.Label41.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Label41.Name = "Label41"
@@ -491,7 +507,7 @@ Partial Class Credits
         '
         Me.Label42.AutoSize = True
         Me.Label42.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label42.Location = New System.Drawing.Point(7, 717)
+        Me.Label42.Location = New System.Drawing.Point(7, 781)
         Me.Label42.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(57, 17)
@@ -502,7 +518,7 @@ Partial Class Credits
         '
         Me.Label43.AutoSize = True
         Me.Label43.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label43.Location = New System.Drawing.Point(7, 802)
+        Me.Label43.Location = New System.Drawing.Point(7, 866)
         Me.Label43.Margin = New System.Windows.Forms.Padding(3)
         Me.Label43.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Label43.Name = "Label43"
@@ -511,24 +527,35 @@ Partial Class Credits
         Me.Label43.Text = "Microsoft Corporation"
         Me.Label43.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label44.Location = New System.Drawing.Point(7, 905)
+        Me.Label44.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(68, 17)
+        Me.Label44.TabIndex = 45
+        Me.Label44.Text = "Branding:"
+        '
         'Label45
         '
         Me.Label45.AutoSize = True
         Me.Label45.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label45.Location = New System.Drawing.Point(7, 864)
+        Me.Label45.Location = New System.Drawing.Point(7, 928)
         Me.Label45.Margin = New System.Windows.Forms.Padding(3)
         Me.Label45.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(591, 26)
         Me.Label45.TabIndex = 46
-        Me.Label45.Text = """Windows Vista"" branding: Microsoft Corporation"
+        Me.Label45.Text = """Windows Longhorn"" branding: Microsoft Corporation"
         Me.Label45.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label47
         '
         Me.Label47.AutoSize = True
         Me.Label47.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label47.Location = New System.Drawing.Point(7, 903)
+        Me.Label47.Location = New System.Drawing.Point(7, 967)
         Me.Label47.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(46, 17)
@@ -539,7 +566,7 @@ Partial Class Credits
         '
         Me.Label48.AutoSize = True
         Me.Label48.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label48.Location = New System.Drawing.Point(7, 926)
+        Me.Label48.Location = New System.Drawing.Point(7, 990)
         Me.Label48.Margin = New System.Windows.Forms.Padding(3)
         Me.Label48.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Label48.Name = "Label48"
@@ -552,7 +579,7 @@ Partial Class Credits
         '
         Me.Label49.AutoSize = True
         Me.Label49.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label49.Location = New System.Drawing.Point(7, 965)
+        Me.Label49.Location = New System.Drawing.Point(7, 1029)
         Me.Label49.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
         Me.Label49.Name = "Label49"
         Me.Label49.Size = New System.Drawing.Size(92, 17)
@@ -563,7 +590,7 @@ Partial Class Credits
         '
         Me.Label50.AutoSize = True
         Me.Label50.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label50.Location = New System.Drawing.Point(7, 988)
+        Me.Label50.Location = New System.Drawing.Point(7, 1052)
         Me.Label50.Margin = New System.Windows.Forms.Padding(3)
         Me.Label50.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Label50.Name = "Label50"
@@ -576,7 +603,7 @@ Partial Class Credits
         '
         Me.Label57.AutoSize = True
         Me.Label57.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label57.Location = New System.Drawing.Point(7, 1027)
+        Me.Label57.Location = New System.Drawing.Point(7, 1091)
         Me.Label57.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
         Me.Label57.Name = "Label57"
         Me.Label57.Size = New System.Drawing.Size(205, 17)
@@ -587,7 +614,7 @@ Partial Class Credits
         '
         Me.Label58.AutoSize = True
         Me.Label58.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label58.Location = New System.Drawing.Point(7, 1050)
+        Me.Label58.Location = New System.Drawing.Point(7, 1114)
         Me.Label58.Margin = New System.Windows.Forms.Padding(3)
         Me.Label58.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Label58.Name = "Label58"
@@ -600,7 +627,7 @@ Partial Class Credits
         '
         Me.Label59.AutoSize = True
         Me.Label59.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label59.Location = New System.Drawing.Point(7, 1089)
+        Me.Label59.Location = New System.Drawing.Point(7, 1153)
         Me.Label59.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
         Me.Label59.Name = "Label59"
         Me.Label59.Size = New System.Drawing.Size(116, 17)
@@ -611,20 +638,20 @@ Partial Class Credits
         '
         Me.Label60.AutoSize = True
         Me.Label60.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label60.Location = New System.Drawing.Point(7, 1112)
+        Me.Label60.Location = New System.Drawing.Point(7, 1176)
         Me.Label60.Margin = New System.Windows.Forms.Padding(3)
         Me.Label60.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Label60.Name = "Label60"
         Me.Label60.Size = New System.Drawing.Size(591, 26)
         Me.Label60.TabIndex = 61
-        Me.Label60.Text = "ImSwordQueen (using resources by Microsoft Corporation)"
+        Me.Label60.Text = "Ojas"
         Me.Label60.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label61
         '
         Me.Label61.AutoSize = True
         Me.Label61.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label61.Location = New System.Drawing.Point(7, 1151)
+        Me.Label61.Location = New System.Drawing.Point(7, 1215)
         Me.Label61.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
         Me.Label61.Name = "Label61"
         Me.Label61.Size = New System.Drawing.Size(234, 17)
@@ -635,20 +662,20 @@ Partial Class Credits
         '
         Me.Label62.AutoSize = True
         Me.Label62.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label62.Location = New System.Drawing.Point(7, 1174)
+        Me.Label62.Location = New System.Drawing.Point(7, 1238)
         Me.Label62.Margin = New System.Windows.Forms.Padding(3)
         Me.Label62.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Label62.Name = "Label62"
         Me.Label62.Size = New System.Drawing.Size(591, 26)
         Me.Label62.TabIndex = 63
-        Me.Label62.Text = "ImSwordQueen (using resources by Microsoft Corporation)"
+        Me.Label62.Text = "ImSwordKing (using resources by Microsoft Corporation)"
         Me.Label62.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label63
         '
         Me.Label63.AutoSize = True
         Me.Label63.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label63.Location = New System.Drawing.Point(7, 1213)
+        Me.Label63.Location = New System.Drawing.Point(7, 1309)
         Me.Label63.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
         Me.Label63.Name = "Label63"
         Me.Label63.Size = New System.Drawing.Size(185, 17)
@@ -659,7 +686,7 @@ Partial Class Credits
         '
         Me.Label64.AutoSize = True
         Me.Label64.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label64.Location = New System.Drawing.Point(7, 1236)
+        Me.Label64.Location = New System.Drawing.Point(7, 1332)
         Me.Label64.Margin = New System.Windows.Forms.Padding(3)
         Me.Label64.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Label64.Name = "Label64"
@@ -672,7 +699,7 @@ Partial Class Credits
         '
         Me.Label67.AutoSize = True
         Me.Label67.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label67.Location = New System.Drawing.Point(7, 1275)
+        Me.Label67.Location = New System.Drawing.Point(7, 1371)
         Me.Label67.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
         Me.Label67.Name = "Label67"
         Me.Label67.Size = New System.Drawing.Size(190, 17)
@@ -683,20 +710,20 @@ Partial Class Credits
         '
         Me.Label68.AutoSize = True
         Me.Label68.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label68.Location = New System.Drawing.Point(7, 1298)
+        Me.Label68.Location = New System.Drawing.Point(7, 1394)
         Me.Label68.Margin = New System.Windows.Forms.Padding(3)
         Me.Label68.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Label68.Name = "Label68"
         Me.Label68.Size = New System.Drawing.Size(591, 26)
         Me.Label68.TabIndex = 69
-        Me.Label68.Text = "Written from scratch for Win8To7 in Visual Basic 2010"
+        Me.Label68.Text = "Dominic Hayes (written from scratch for Win8To7 in Visual Basic 2010)"
         Me.Label68.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label72
         '
         Me.Label72.AutoSize = True
         Me.Label72.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label72.Location = New System.Drawing.Point(7, 1337)
+        Me.Label72.Location = New System.Drawing.Point(7, 1433)
         Me.Label72.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
         Me.Label72.Name = "Label72"
         Me.Label72.Size = New System.Drawing.Size(103, 17)
@@ -707,7 +734,7 @@ Partial Class Credits
         '
         Me.Label79.AutoSize = True
         Me.Label79.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label79.Location = New System.Drawing.Point(7, 1392)
+        Me.Label79.Location = New System.Drawing.Point(7, 1488)
         Me.Label79.Margin = New System.Windows.Forms.Padding(3)
         Me.Label79.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Label79.Name = "Label79"
@@ -720,7 +747,7 @@ Partial Class Credits
         '
         Me.Label81.AutoSize = True
         Me.Label81.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label81.Location = New System.Drawing.Point(7, 1424)
+        Me.Label81.Location = New System.Drawing.Point(7, 1520)
         Me.Label81.Margin = New System.Windows.Forms.Padding(3)
         Me.Label81.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Label81.Name = "Label81"
@@ -733,7 +760,7 @@ Partial Class Credits
         '
         Me.Label82.AutoSize = True
         Me.Label82.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label82.Location = New System.Drawing.Point(7, 1475)
+        Me.Label82.Location = New System.Drawing.Point(7, 1571)
         Me.Label82.Margin = New System.Windows.Forms.Padding(3)
         Me.Label82.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Label82.Name = "Label82"
@@ -748,7 +775,7 @@ Partial Class Credits
         Me.Panel18.Controls.Add(Me.Button18)
         Me.Panel18.Controls.Add(Me.Label83)
         Me.Panel18.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel18.Location = New System.Drawing.Point(7, 1360)
+        Me.Panel18.Location = New System.Drawing.Point(7, 1456)
         Me.Panel18.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Panel18.Name = "Panel18"
         Me.Panel18.Size = New System.Drawing.Size(591, 26)
@@ -760,11 +787,11 @@ Partial Class Credits
         Me.Button18.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Button18.Dock = System.Windows.Forms.DockStyle.Right
         Me.Button18.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button18.Location = New System.Drawing.Point(538, 0)
+        Me.Button18.Location = New System.Drawing.Point(364, 0)
         Me.Button18.Name = "Button18"
-        Me.Button18.Size = New System.Drawing.Size(53, 26)
+        Me.Button18.Size = New System.Drawing.Size(227, 26)
         Me.Button18.TabIndex = 9
-        Me.Button18.Text = "Button"
+        Me.Button18.Text = "Join Windows Customization Hub (13+)"
         Me.Button18.UseVisualStyleBackColor = True
         '
         'Label83
@@ -775,9 +802,9 @@ Partial Class Credits
         Me.Label83.Margin = New System.Windows.Forms.Padding(3)
         Me.Label83.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Label83.Name = "Label83"
-        Me.Label83.Size = New System.Drawing.Size(69, 26)
+        Me.Label83.Size = New System.Drawing.Size(289, 26)
         Me.Label83.TabIndex = 8
-        Me.Label83.Text = "Placeholder"
+        Me.Label83.Text = "Everyone in the Windows Customization Hub Discord"
         Me.Label83.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel20
@@ -825,9 +852,10 @@ Partial Class Credits
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Label15, 0, 37)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label41, 0, 42)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label41, 0, 41)
         Me.TableLayoutPanel1.Controls.Add(Me.Label19, 0, 40)
         Me.TableLayoutPanel1.Controls.Add(Me.Panel4, 0, 24)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label7, 0, 63)
         Me.TableLayoutPanel1.Controls.Add(Me.Panel20, 0, 23)
         Me.TableLayoutPanel1.Controls.Add(Me.Panel18, 0, 79)
         Me.TableLayoutPanel1.Controls.Add(Me.Label82, 0, 83)
@@ -869,7 +897,9 @@ Partial Class Credits
         Me.TableLayoutPanel1.Controls.Add(Me.Label3, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.Label1, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label2, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label39, 0, 37)
         Me.TableLayoutPanel1.Controls.Add(Me.Label17, 0, 37)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label5, 0, 37)
         Me.TableLayoutPanel1.Controls.Add(Me.Label36, 0, 37)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.ForeColor = System.Drawing.SystemColors.WindowText
@@ -970,7 +1000,7 @@ Partial Class Credits
         '
         Me.Label15.AutoSize = True
         Me.Label15.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label15.Location = New System.Drawing.Point(7, 616)
+        Me.Label15.Location = New System.Drawing.Point(7, 680)
         Me.Label15.Margin = New System.Windows.Forms.Padding(3)
         Me.Label15.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Label15.Name = "Label15"
@@ -983,7 +1013,7 @@ Partial Class Credits
         '
         Me.Label19.AutoSize = True
         Me.Label19.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label19.Location = New System.Drawing.Point(7, 678)
+        Me.Label19.Location = New System.Drawing.Point(7, 742)
         Me.Label19.Margin = New System.Windows.Forms.Padding(3)
         Me.Label19.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Label19.Name = "Label19"
@@ -1011,11 +1041,11 @@ Partial Class Credits
         Me.Button4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Button4.Dock = System.Windows.Forms.DockStyle.Right
         Me.Button4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button4.Location = New System.Drawing.Point(538, 0)
+        Me.Button4.Location = New System.Drawing.Point(509, 0)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(53, 26)
+        Me.Button4.Size = New System.Drawing.Size(82, 26)
         Me.Button4.TabIndex = 9
-        Me.Button4.Text = "Button"
+        Me.Button4.Text = "Visit website"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'Label13
@@ -1026,21 +1056,23 @@ Partial Class Credits
         Me.Label13.Margin = New System.Windows.Forms.Padding(3)
         Me.Label13.MinimumSize = New System.Drawing.Size(0, 26)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(69, 26)
+        Me.Label13.Size = New System.Drawing.Size(124, 26)
         Me.Label13.TabIndex = 8
-        Me.Label13.Text = "Placeholder"
+        Me.Label13.Text = "OldNewExplorer: Tihiy"
         Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label44
+        'Label7
         '
-        Me.Label44.AutoSize = True
-        Me.Label44.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.Location = New System.Drawing.Point(7, 841)
-        Me.Label44.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(68, 17)
-        Me.Label44.TabIndex = 45
-        Me.Label44.Text = "Branding:"
+        Me.Label7.AutoSize = True
+        Me.Label7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label7.Location = New System.Drawing.Point(7, 1270)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(3)
+        Me.Label7.MinimumSize = New System.Drawing.Size(0, 26)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(591, 26)
+        Me.Label7.TabIndex = 87
+        Me.Label7.Text = "Dominic Hayes (using resources by Microsoft Corporation)"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label17
         '
@@ -1054,6 +1086,19 @@ Partial Class Credits
         Me.Label17.TabIndex = 91
         Me.Label17.Text = "StarSong (using resources by Microsoft Corporation)"
         Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label5.Location = New System.Drawing.Point(7, 648)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(3)
+        Me.Label5.MinimumSize = New System.Drawing.Size(0, 26)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(591, 26)
+        Me.Label5.TabIndex = 89
+        Me.Label5.Text = "Dominic Hayes (using resources by Microsoft Corporation)"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Credits
         '
@@ -1121,10 +1166,12 @@ Partial Class Credits
     Friend WithEvents Button16 As System.Windows.Forms.Button
     Friend WithEvents Label37 As System.Windows.Forms.Label
     Friend WithEvents Label38 As System.Windows.Forms.Label
+    Friend WithEvents Label39 As System.Windows.Forms.Label
     Friend WithEvents Label40 As System.Windows.Forms.Label
     Friend WithEvents Label41 As System.Windows.Forms.Label
     Friend WithEvents Label42 As System.Windows.Forms.Label
     Friend WithEvents Label43 As System.Windows.Forms.Label
+    Friend WithEvents Label44 As System.Windows.Forms.Label
     Friend WithEvents Label45 As System.Windows.Forms.Label
     Friend WithEvents Label47 As System.Windows.Forms.Label
     Friend WithEvents Label48 As System.Windows.Forms.Label
@@ -1151,11 +1198,12 @@ Partial Class Credits
     Friend WithEvents Button20 As System.Windows.Forms.Button
     Friend WithEvents Label84 As System.Windows.Forms.Label
     Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents Label17 As System.Windows.Forms.Label
-    Friend WithEvents Label44 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class

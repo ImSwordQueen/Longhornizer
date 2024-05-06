@@ -76,7 +76,7 @@
         Process.Start("https://garyan2.github.io/win10.html")
     End Sub
 
-    Private Sub Button20_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub Button20_Click(sender As System.Object, e As System.EventArgs) Handles Button20.Click
         Process.Start("https://www.7-zip.org/")
     End Sub
 

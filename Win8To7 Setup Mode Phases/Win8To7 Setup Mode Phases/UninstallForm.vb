@@ -22,7 +22,7 @@
             LinkLabel1.VisitedLinkColor = Control.DefaultForeColor
         Else
             Me.BackColor = Color.Black
-            Me.BackgroundImage = My.Resources.int_PreSetupBG
+            Me.BackgroundImage = My.Resources.int_SetupBG
             Me.ForeColor = Color.White
             LinkLabel1.ForeColor = Color.White
             LinkLabel1.LinkColor = Color.White

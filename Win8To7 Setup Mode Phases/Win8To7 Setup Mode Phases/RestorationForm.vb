@@ -34,7 +34,6 @@ Do not turn off your computer.</a>
                 Me.ForeColor = Color.White
             Else
                 Me.BackgroundImage = My.Resources.int_SetupBG
-                CustomisingLogo.BackgroundImage = My.Resources.int_winbranding
                 Me.BackColor = Color.Black
                 Me.ForeColor = Color.White
             End If
@@ -338,7 +337,7 @@ Do not turn off your computer.</a>
                         Next
                     Next
                 End If
-                totalTasks += 1
+                totalTasks += 1 'Deleting Swatches
                 ' Registry keys
                 For Each key In regtweaks.SystemTweaks.Item("Delete")
                     totalTasks += 1
@@ -503,6 +502,14 @@ Do not turn off your computer.</a>
 
             'REGISTRY RESTORATION STUFF
             ' SYSTEM-WIDE
+            ' Delete Swatches entirely again
+            Shell(windir + "\" + sysprefix + "\cmd.exe /c reg DELETE ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Control Panel\Glass Colorization\Swatches"" /f", AppWinStyle.Hide, True)
+            doneTasks += 1
+
+            If forCustomise = False Then
+                ' Delete Getting Started data
+                Shell(windir + "\" + sysprefix + "\cmd.exe /c reg DELETE ""HKLM\SOFTWARE\LonghornizerGS"" /f", AppWinStyle.Hide, True)
+            End If
 
             ' Restore all settings first without deletions
             If RestoreRegistryAll("HKLM") = False Then
@@ -546,6 +553,13 @@ Do not turn off your computer.</a>
                 End If
                 doneTasks += 1
             Next
+            If System.Environment.OSVersion.Version.Minor = 3 And forCustomise = False Then 'Refer to Form1's reasoning for not in 8.0.
+                'Undo autorun for 7+ Taskbar Tweaker
+                If RestoreRegistry("HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run", "7 Taskbar Tweaker", False) = False Then
+                    Exit Sub
+                End If
+            End If
+
 
             ' USER-WIDE
             'Unload HKLM\UserConfig first if loaded
@@ -744,6 +758,13 @@ Do not turn off your computer.</a>
                 End If
                 Thread.Sleep(400)
 
+                If System.Environment.OSVersion.Version.Minor = 3 Then
+                    'While we're here, remove the Libraries' Public folders-symlinks (rmdir only removes empty-folders) 
+                    Shell(windir + "\" + sysprefix + "\cmd.exe /c rmdir """ + loopdirinfo.FullName + "\Music\Sample Music""", AppWinStyle.Hide, True)
+                    Shell(windir + "\" + sysprefix + "\cmd.exe /c rmdir """ + loopdirinfo.FullName + "\Pictures\Sample Pictures""", AppWinStyle.Hide, True)
+                    Shell(windir + "\" + sysprefix + "\cmd.exe /c rmdir """ + loopdirinfo.FullName + "\Videos\Sample Videos""", AppWinStyle.Hide, True)
+                End If
+
                 'Finally, unload HKLM\UserConfig once again
                 If IO.File.Exists(loopdirinfo.FullName + "\AppData\Local\Microsoft\Windows\UsrClass.dat") Then
                     Shell(windir + "\" + sysprefix + "\cmd.exe /c reg unload ""HKLM\UserConfigClasses""", AppWinStyle.Hide, True)
@@ -755,42 +776,10 @@ Do not turn off your computer.</a>
                 ChangeProgress(100)
             End If
 
-            'Just in case, copy shell32a.dll over shell32.dll for the next step
-            If IO.File.Exists(windir + "\Temp\shell32.dll.temp") Then
-                Try
-                    IO.File.Delete(windir + "\Temp\shell32.dll.temp")
-                Catch ex As Exception
-                    ErrorOccurred("Failed to make room for moving modified shell32.dll to the Temp folder" + ": " + ex.ToString())
-                    Exit Sub
-                End Try
-            End If
-            Try
-                IO.File.Move(windir + "\" + sysprefix + "\shell32.dll", windir + "\Temp\shell32.dll.temp")
-            Catch ex As Exception
-                ErrorOccurred("Failed to move modified file " + windir + "\" + sysprefix + "\shell32.dll" + " to " + windir + "\Temp\shell32.dll.temp" + ": " + ex.ToString())
-                Exit Sub
-            End Try
-            Try
-                IO.File.Copy(windir + "\" + sysprefix + "\shell32a.dll", windir + "\" + sysprefix + "\shell32.dll", True)
-            Catch ex As Exception
-                ErrorOccurred("Failed to copy original file " + windir + "\" + sysprefix + "\shell32a.dll" + " to " + windir + "\" + sysprefix + "\shell32.dll" + ": " + ex.ToString())
-                Exit Sub
-            End Try
-
-            If forCustomise = False Then
-                'Restore SHELL32.DLL dependency defaults
-                Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\ControlSet001\Control\Session Manager\KnownDLLs"" /v SHELL32 /t REG_SZ /d shell32.dll /f", AppWinStyle.Hide, True)
-
-                'Copy setup executable to TEMP folder for final stage
-                Try
-                    IO.File.Copy(storagelocation + "\SetupTools\setup.exe", windir + "\Temp\Longhornizerrestore.exe", True)
-                Catch ex As Exception
-                    ErrorOccurred("Failed to copy Restoration Executable to the Temp folder for the next stage of restoration" + ": " + ex.ToString())
-                    Exit Sub
-                End Try
-            End If
 
             'CLEANUP
+            'Delete lock screen background cache
+            Shell(windir + "\" + sysprefix + "\cmd.exe /c del " + windrive + "ProgramData\Microsoft\Windows\SystemData\* /s /q /f", AppWinStyle.Hide, True)
             'Delete icon caches for all users
             dirArr = New IO.DirectoryInfo(windrive + "Users").GetDirectories() 'Required for getting list of directories in directory to loop through
             For Each loopdirinfo In dirArr
@@ -809,6 +798,33 @@ Do not turn off your computer.</a>
                     End If
                 Next
             Next
+            If IO.Directory.Exists(windir + "\Resources\Themes\aero\VSCache") Then
+                'Delete the existing VSCaches and restore old ones (MUST BE DONE HERE OR WINDOWS WILL BRICK)
+                fiArr = New IO.DirectoryInfo(windir + "\Resources\Themes\aero\VSCache").GetFiles() 'Get current VSCaches
+                For Each loopfileinfo In fiArr
+                    Try 'Delete modified VS Caches
+                        IO.File.Delete(loopfileinfo.FullName)
+                    Catch ex As Exception
+                        ErrorOccurred("Failed to delete modified Visual Style Cache " + loopfileinfo.FullName + ": " + ex.ToString())
+                        Exit Sub
+                    End Try
+                Next
+            Else
+                Try
+                    IO.Directory.CreateDirectory(windir + "\Resources\Themes\aero\VSCache")
+                Catch ex As Exception
+                    ErrorOccurred("Failed to make VSCache folder for unmodified Visual Style Caches to move back to: " + ex.ToString())
+                End Try
+            End If
+            fiArr = New IO.DirectoryInfo(storagelocation + "\VSCaches").GetFiles() 'Get original VSCaches
+            For Each loopfileinfo In fiArr
+                Try 'Restore original VS Caches
+                    IO.File.Move(loopfileinfo.FullName, windir + "\Resources\Themes\aero\VSCache\" + loopfileinfo.Name)
+                Catch ex As Exception
+                    ErrorOccurred("Failed to move original Visual Style Cache " + loopfileinfo.FullName + " to " + windir + "\Resources\Themes\aero\VSCache\" + loopfileinfo.Name + ": " + ex.ToString())
+                    Exit Sub
+                End Try
+            Next
 
             If forCustomise = True Then
                 CustomisationCleanup("") 'Change status to cleanup status
@@ -819,12 +835,15 @@ Do not turn off your computer.</a>
 
             'Uninstall programs that're installed
             If forCustomise = False Then
-                'Uninstall Classic Shell
-                Shell(windir + "\" + sysprefix + "\cmd.exe /c reg DELETE ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{FEA1590B-540A-41FC-A95C-664493C82A21}"" /v ""SystemComponent"" /f", AppWinStyle.Hide, True)
-                Shell(windir + "\" + sysprefix + "\msiexec.exe /X{FEA1590B-540A-41FC-A95C-664493C82A21} /passive /norestart", AppWinStyle.NormalFocus, True, 2400000)
+                'Uninstall Glass8
+                Shell(windir + "\" + sysprefix + "\cmd.exe /c reg DELETE ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{F4B6EE58-F183-4B0D-930B-4480673C0F5B}"" /v ""SystemComponent"" /f", AppWinStyle.Hide, True)
+                Shell(windir + "\" + sysprefix + "\msiexec.exe /X{F4B6EE58-F183-4B0D-930B-4480673C0F5B} /passive /norestart", AppWinStyle.NormalFocus, True, 2400000)
             End If
+            'Uninstall Open Shell
+            Shell(windir + "\" + sysprefix + "\cmd.exe /c reg DELETE ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{F4B6EE58-F183-4B0D-930B-4480673C0F5B}"" /v ""SystemComponent"" /f", AppWinStyle.Hide, True)
+            Shell(windir + "\" + sysprefix + "\msiexec.exe /X{F4B6EE58-F183-4B0D-930B-4480673C0F5B} /passive /norestart", AppWinStyle.NormalFocus, True, 2400000)
 
-            'Keep Explorer from running
+            'Keep Explorer from running after SIB+ and co. is uninstalled
             jobthread2 = New Thread(AddressOf KillExplorer)
             jobthread2.Start()
 
@@ -881,23 +900,18 @@ Do not turn off your computer.</a>
                 Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\Setup"" /v SystemSetupInProgress /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
             End If
 
+            'Delete StartIsBack leftover thingy
+            If HKLMKey32.OpenSubKey("SOFTWARE\Longhornizer").GetValue("Start") = "startisback" Then
+                If IO.File.Exists(windrive + "remove.cmd") Then
+                    Try
+                        IO.File.Delete(windrive + "remove.cmd")
+                    Catch
+                    End Try
+                End If
+            End If
+
             If forCustomise = False Then 'Don't do this portion if updating the transformation
                 'Undo the anti-bricking setup, now it's no longer needed
-                If IO.File.Exists(windir + "\" + sysprefix + "\shell32a.dll") Then
-                    Try
-                        IO.File.Delete(windir + "\" + sysprefix + "\shell32a.dll")
-                    Catch ex As Exception
-                        ErrorOccurred("Failed to delete shell32a.dll - perhaps the workaround is still active even though it shouldn't be?" + ": " + ex.ToString())
-                        Exit Sub
-                    End Try
-                End If
-                'Then remove shell32.dll.temp too
-                If IO.File.Exists(windir + "\Temp\shell32.dll.temp") Then
-                    Try
-                        IO.File.Delete(windir + "\Temp\shell32.dll.temp")
-                    Catch 'Ignore this failure too
-                    End Try
-                End If
 
                 If UXThemePatcherAllowed = "true" Then
                     'Uninstall UXThemePatcher

@@ -55,6 +55,19 @@ Namespace My
         End Property
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("<?xml version=""1.0"" encoding=""utf-16""?>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"<ArrayOfString xmlns:xsi=""http://www.w3."& _ 
+            "org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <s"& _ 
+            "tring>""Windows\Web\Wallpaper\Theme1\img13.jpg""</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>""Windows\Syst"& _ 
+            "em32\oobe\FirstLogonAnim.exe""</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  <string>""Windows\System32\oobe\FirstLo"& _ 
+            "gonAnim.html""</string>"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"</ArrayOfString>")>  _
+        Public ReadOnly Property itemsToDelete() As Global.System.Collections.Specialized.StringCollection
+            Get
+                Return CType(Me("itemsToDelete"),Global.System.Collections.Specialized.StringCollection)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public ReadOnly Property itemsToMove() As Global.System.Collections.Specialized.StringDictionary
             Get

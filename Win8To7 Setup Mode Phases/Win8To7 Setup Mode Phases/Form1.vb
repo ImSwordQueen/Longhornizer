@@ -36,7 +36,6 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
                 Me.ForeColor = Color.White 'and non-glitched's white text
             Else
                 Me.BackgroundImage = My.Resources.int_SetupBG 'Otherwise, just make it look like it should
-                PictureBox2.BackgroundImage = My.Resources.int_winbranding
                 Me.BackColor = Color.Black
                 Me.ForeColor = Color.White
             End If
@@ -211,7 +210,10 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
 
                 'DELETE FILES AND PROGRAM-LEFTOVERS FROM OLD TRANSFORMATION PACK VERSION
                 Dim tries As Integer 'Delete and re-create directories, first.
-                For Each direc In {storagelocation + "\SetupFiles", windir + "\Temp\LonghornizerDiscardedFiles"} 'NOTE: At this point, we already uninstalled these programs.
+                For Each direc In {storagelocation + "\SetupFiles", windir + "\Temp\LonghornizerDiscardedFiles", windir + "\" + sysprefix + "\OldNewExplorer", _
+                                   windrive + "Program Files\Microsoft Games", windrive + "Program Files\ClassicTaskmgr", windir + "\" + sysprefix + "\Longhornizer", _
+                                   windrive + "Program Files (x86)\Windows Sidebar", windrive + "Program Files\Windows Sidebar", windir + "\explorer7", _
+                                   windrive + "Program Files (x86)\StartIsBack", windrive + "Program Files\StartIsBack", windrive + "Program Files\Open-Shell"} 'NOTE: At this point, we already uninstalled these programs.
                     tries = 0
                     While Not tries = 10
                         Shell(windir + "\" + sysprefix + "\cmd.exe /c del """ + direc + """ /s /q /f /a", AppWinStyle.Hide, True)
@@ -222,8 +224,11 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
                         tries += 1
                     End While
                 Next
+                Shell(windir + "\" + sysprefix + "\cmd.exe /c del """ + windrive + "ProgramData\Microsoft\Windows\Start Menu\Programs\Games\GameExplorer.lnk"" /s /q /f /a", AppWinStyle.Hide, True) 'Delete the remaining shortcut Win7Games left
                 Shell(windir + "\" + sysprefix + "\cmd.exe /c del """ + storagelocation + "\setupold.exe"" /s /q /f /a", AppWinStyle.Hide, True) 'Delete the old Setup executable, now it's completely unnecessary
             End If
+
+            Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\LonghornizerGS"" /v ""Branding"" /t REG_SZ /d """ + HKLMKey32.OpenSubKey("SOFTWARE\Longhornizer").GetValue("Branding") + """ /f", AppWinStyle.Hide, True)
 
             'Extract everything before running
             If ExtractEverything() = False Then 'Abort if extracting fails
@@ -233,12 +238,12 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
 
             'First step: Run Installers
 
-            If forCustomise = False Then 'If this is an update installation, then don't install Classic shell and UXThemePatcher again
+            If forCustomise = False Then 'If this is an update installation, then don't install Aero Glass and UXThemePatcher again as Aero Glass is only partially installed if installed in Setup Mode
                 '(where we're doing this during an Update install), and UXThemePatcher would be a waste of time to 'install' given it's already installed (Update doesn't uninstall them)
                 If Not IO.File.Exists(windrive + "Program Files\Classic Shell\ClassicExplorerSettings.exe") Then
-                    'Install Classic Shell
-                    Shell(storagelocation + "\SetupFiles\OpenShellSetup.exe /qn ADDLOCAL=ClassicStartMenu,ClassicExplorer", AppWinStyle.NormalFocus, True, 2400000)
-                    Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{FEA1590B-540A-41FC-A95C-664493C82A21}"" /v ""SystemComponent"" /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
+                    'Install Glass8
+                    Shell(storagelocation + "\SetupFiles\OpenShellSetup.exe /qn ADDLOCAL=StartMenu,ClassicExplorer", AppWinStyle.NormalFocus, True, 2400000)
+                    Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{F4B6EE58-F183-4B0D-930B-4480673C0F5B}"" /v ""SystemComponent"" /t REG_DWORD /d 1 /f", AppWinStyle.Hide, True)
                     'SystemComponent means that it won't appear in Programs and Features - this is especially important for programs like UXThemePatcher
                 End If
                 ChangeProgress(35)
@@ -315,19 +320,6 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
             Shell(windir + "\" + sysprefix + "\cmd.exe /c del /s /q /a /f """ + storagelocation + "\SetupFiles""")
             ChangeProgress(25)
 
-            'Now copy shell32.dll to shell32a.dll, as part of the anti-bricking setup
-            If Not IO.File.Exists(windir + "\" + sysprefix + "\shell32a.dll") Then
-                Try
-                    IO.File.Copy(windir + "\" + sysprefix + "\shell32.dll", windir + "\" + sysprefix + "\shell32a.dll", True)
-                Catch ex As Exception
-                    ErrorOccurred("Failed to back up shell32.dll in advance to prevent bricking your Windows installation: " + ex.ToString())
-                    Exit Sub
-                End Try
-            End If
-            'Now that is done, change SHELL32.DLL dependency to be shell32a.dll to prevent Windows getting bricked by the next phase
-            Shell(windir + "\" + sysprefix + "\cmd.exe /c reg ADD ""HKLM\SYSTEM\ControlSet001\Control\Session Manager\KnownDLLs"" /v SHELL32 /t REG_SZ /d shell32a.dll /f", AppWinStyle.Hide, True)
-            ChangeProgress(50)
-
             Thread.Sleep(3000) 'This is done to make sure it doesn't seem like all it's doing is restarting for no reason - +3 seconds of 3/4
 
             'Boot into installer once again for Phase 4 with the Setup Mode
@@ -392,7 +384,7 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
                 Next
             Next
             totalTasks += cfgs.itemsToMove.Count ' 3: Files/Folders to move
-            totalTasks += 2
+            totalTasks += 2 ' 4: Deleting Swatches and setting 7++ autostart
             ' 5: Registry keys
             For Each key In regtweaks.SystemTweaks.Item("Delete")
                 totalTasks += 1
@@ -446,6 +438,7 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
                 totalTasks += 1 '7: Cleanup of Icons Caches
             Next
             totalTasks += 3 '8: Cleanup stuff
+            totalTasks += My.Settings.itemsToDelete.Count '9: Files to delete
 
             'Start the background thread for changing the progress over time in this stage
             Dim jobthread As New Thread(AddressOf Phase4Progress)
@@ -561,7 +554,7 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
                     startInfo.WindowStyle = ProcessWindowStyle.Hidden
 
                     MyProcess = Process.Start(startInfo)
-                    MyProcess.WaitForExit(4400000) '2400000 milisecond time limit should be long enough given Resource Hacker takes a long time on imageres.dll and such
+                    MyProcess.WaitForExit(2400000) '2400000 milisecond time limit should be long enough given Resource Hacker takes a long time on imageres.dll and such
                     If (MyProcess.ExitCode <> 0) Then
                         ErrorOccurred("Resource Hacker failed to patch file: " + reslessname)
                         Exit Sub
@@ -580,6 +573,13 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
 
 
             ' REGISTRY CHANGES - SYSTEM-WIDE
+            '  Back up Swatches first
+            If BackupRegistry("HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Control Panel\Glass Colorization\Swatches", "", True) = False Then 'Backup first
+                Exit Sub
+            End If
+            '  Delete Swatches entirely first
+            Shell(windir + "\" + sysprefix + "\cmd.exe /c reg DELETE ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Control Panel\Glass Colorization\Swatches"" /f", AppWinStyle.Hide, True) 'and then make changes
+            doneTasks += 1
             '  Then tackle remaining deletions
             For Each key In regtweaks.SystemTweaks.Item("Delete")
                 If BackupRegistry(key.Item(0), key.Item(1), False) = False Then 'Backup first
@@ -799,6 +799,28 @@ Do not turn off your computer.</a> 'These are more-so based on how Windows Vista
             Next
 
             'CLEANUP
+            ' Delete VSCache for AEROs (aka move to backup)
+            targetPath = "Windows\Resources\Themes\aero\VSCache"
+            Try
+                CreateDir(storagelocation + "\VSCaches")
+            Catch ex As Exception
+                ErrorOccurred("Failed to create directory to back up Visual Style Cache files to: " + ex.ToString())
+                Exit Sub
+            End Try
+            fiArr = New IO.DirectoryInfo(windrive + targetPath).GetFiles() 'Get the files in this directory
+            For Each loopfileinfo In fiArr
+                Try
+                    If Not IO.File.Exists(storagelocation + "\VSCaches\" + loopfileinfo.Name) Then
+                        IO.File.Move(loopfileinfo.FullName, storagelocation + "\VSCaches\" + loopfileinfo.Name)
+                    Else
+                        IO.File.Delete(loopfileinfo.FullName) 'prioritise older VSCache backup, delete the newer one
+                    End If
+                Catch ex As Exception
+                    ErrorOccurred("Failed to move " + loopfileinfo.FullName + " to the VSCache backups folder: " + ex.ToString())
+                    Exit Sub
+                End Try
+            Next
+            doneTasks += 1
             ' Delete lock screen background cache
             Shell(windir + "\" + sysprefix + "\cmd.exe /c del " + windrive + "ProgramData\Microsoft\Windows\SystemData\* /s /q /f", AppWinStyle.Hide, True)
             doneTasks += 1

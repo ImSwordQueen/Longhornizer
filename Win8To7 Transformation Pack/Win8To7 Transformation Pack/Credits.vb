@@ -13,7 +13,7 @@
     End Sub
 
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
-        Process.Start("")
+        Process.Start("https://msfn.org/board/topic/170375-oldnewexplorer-119/")
     End Sub
 
     Private Sub Button5_Click(sender As System.Object, e As System.EventArgs) Handles Button5.Click
@@ -25,7 +25,7 @@
     End Sub
 
     Private Sub Button7_Click(sender As System.Object, e As System.EventArgs) Handles Button7.Click
-        Process.Start("")
+        Process.Start("https://ramensoftware.com/donate")
     End Sub
 
     Private Sub Button8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -33,7 +33,7 @@
     End Sub
 
     Private Sub Button9_Click(sender As System.Object, e As System.EventArgs) Handles Button9.Click
-        Process.Start("")
+        Process.Start("https://gadgetsrevived.com")
     End Sub
 
     Private Sub Button11_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -69,7 +69,7 @@
     End Sub
 
     Private Sub Button18_Click(sender As System.Object, e As System.EventArgs) Handles Button18.Click
-        Process.Start("")
+        Process.Start("https://discord.gg/CrCAbcSsXW")
     End Sub
 
     Private Sub Button19_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)

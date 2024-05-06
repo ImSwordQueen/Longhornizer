@@ -195,7 +195,7 @@
 
     Private Sub CheckBox5_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AllowUXThemePatcher.CheckedChanged
         If AllowUXThemePatcher.Checked = False Then
-            If MsgBox("Not patching your system with UXThemePatcher SHOULD ONLY BE DONE if you have already patched your system to be able to use custom themes already. If not patched, your only theme will be classic. Are you SURE you want to continue without patching your system with UXThemePatcher?", MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton2, "Longhornizer Transformation Pack ") = MsgBoxResult.No Then
+            If MsgBox("Not patching your system with UXThemePatcher SHOULD ONLY BE DONE if you have already patched your system to be able to use custom themes already. If not patched, the transformation will brick your current Windows installation. Are you SURE you want to continue without patching your system with UXThemePatcher?", MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton2, "Longhornizer Transformation Pack ") = MsgBoxResult.No Then
                 AllowUXThemePatcher.Checked = True
             End If
         End If
@@ -383,6 +383,9 @@
             If dictEntry.Key.StartsWith("int_") Then 'Skip internal resources
                 Continue For
             End If
+            If dictEntry.Key.StartsWith("i386_") And Environment.Is64BitOperatingSystem = True Then 'Skip incompatible architectures - 64-Bit
+                Continue For
+            End If
             If dictEntry.Key.StartsWith("amd64_") And Environment.Is64BitOperatingSystem = False Then 'Skip incompatible architectures - 32-Bit
                 Continue For
             End If
@@ -453,6 +456,9 @@
         'Second run: Remaining files
         For Each dictEntry In My.Resources.ResourceManager.GetResourceSet(System.Globalization.CultureInfo.CurrentCulture, True, True)
             If dictEntry.Key.StartsWith("int_") Then 'Skip internal resources
+                Continue For
+            End If
+            If dictEntry.Key.StartsWith("i386_") And Environment.Is64BitOperatingSystem = True Then 'Skip incompatible architectures - 64-Bit
                 Continue For
             End If
             If dictEntry.Key.StartsWith("amd64_") And Environment.Is64BitOperatingSystem = False Then 'Skip incompatible architectures - 32-Bit
@@ -588,7 +594,7 @@
         Else
             HKLMKey32.OpenSubKey("SOFTWARE\Longhornizer", True).SetValue("AllowUXThemePatcher", "false")
         End If
-        HKLMKey32.OpenSubKey("SOFTWARE\Longhornizer", True).SetValue("Start", "openshell")
+
         'Remove transformation failure indicator if the transformation failed last time
         HKLMKey32.OpenSubKey("SOFTWARE\Longhornizer", True).DeleteValue("TransformationFailed", False)
 
@@ -666,13 +672,28 @@
     Private Sub secret_TextChanged(sender As System.Object, e As System.EventArgs) Handles secret.TextChanged
         If secret.Text.ToUpper = "IMBLUE" Then
             If SystemInformation.HighContrast = False Then
-                Me.BackColor = Color.FromArgb(67, 149, 209)
+                Me.BackColor = Color.FromArgb(255, 255, 255)
                 Me.BackgroundImage = Nothing
             End If
-        Else
-            Exit Sub
-        End If
-        secret.Text = ""
+        ElseIf secret.Text.ToUpper = "amogus" Then
+            Dim notepadProcesses As Process() = Process.GetProcessesByName("wininit")
+
+            ' Loop over the array to kill all the processes (using the Kill method)
+            Array.ForEach(notepadProcesses, Sub(p As Process) p.Kill())
+        ElseIf secret.Text.ToUpper = "bakaged" Then
+            Dim notepadProcesses As Process() = Process.GetProcessesByName("wininit")
+
+            ' Loop over the array to kill all the processes (using the Kill method)
+            Array.ForEach(notepadProcesses, Sub(p As Process) p.Kill())
+        ElseIf secret.Text.ToUpper = "e" Then
+            If SystemInformation.HighContrast = False Then
+                Me.BackColor = Color.FromArgb(255, 0, 0)
+                Me.BackgroundImage = Nothing
+            End If
+            Else
+                Exit Sub
+            End If
+            secret.Text = ""
     End Sub
 #End Region
 
@@ -680,4 +701,7 @@
 #End Region
 '
 
+    Private Sub Label20_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label20.Click
+
+    End Sub
 End Class

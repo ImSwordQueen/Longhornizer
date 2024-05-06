@@ -37,7 +37,15 @@ Partial Class Form1
         Me.BackArea = New System.Windows.Forms.Panel()
         Me.BackButton = New System.Windows.Forms.PictureBox()
         Me.PageConfirm = New System.Windows.Forms.Panel()
+        Me.ReduceWinX = New System.Windows.Forms.CheckBox()
+        Me.DisableLockScreen = New System.Windows.Forms.CheckBox()
+        Me.AllowUserCPL = New System.Windows.Forms.CheckBox()
         Me.AllowUXThemePatcher = New System.Windows.Forms.CheckBox()
+        Me.Allow7TaskManager = New System.Windows.Forms.CheckBox()
+        Me.AllowMediaCenter = New System.Windows.Forms.CheckBox()
+        Me.Allow7Gadgets = New System.Windows.Forms.CheckBox()
+        Me.Allow7Games = New System.Windows.Forms.CheckBox()
+        Me.AllowShell32 = New System.Windows.Forms.CheckBox()
         Me.NextConfirm = New System.Windows.Forms.Button()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -88,11 +96,11 @@ Partial Class Form1
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(667, 575)
+        Me.Label21.Location = New System.Drawing.Point(680, 575)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(95, 17)
+        Me.Label21.Size = New System.Drawing.Size(73, 17)
         Me.Label21.TabIndex = 5
-        Me.Label21.Text = "Version 0.3Dev"
+        Me.Label21.Text = "Version 3.2"
         Me.Label21.TextAlign = System.Drawing.ContentAlignment.BottomRight
         '
         'Next1
@@ -104,6 +112,7 @@ Partial Class Form1
         Me.Next1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.Next1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Next1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Next1.Image = Global.Longhornizer_Transformation_Pack.My.Resources.Resources.int_ForwardNormal
         Me.Next1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Next1.Location = New System.Drawing.Point(274, 280)
         Me.Next1.Name = "Next1"
@@ -182,7 +191,7 @@ Partial Class Form1
         Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TextBox1.Size = New System.Drawing.Size(735, 465)
         Me.TextBox1.TabIndex = 2
-        Me.TextBox1.Text = resources.GetString("TextBox1.Text")
+        Me.TextBox1.Text = "do not fork or use this software."
         '
         'Label2
         '
@@ -218,6 +227,7 @@ Partial Class Form1
         'BackButton
         '
         Me.BackButton.Enabled = False
+        Me.BackButton.Image = Global.Longhornizer_Transformation_Pack.My.Resources.Resources.int_BackDisabled
         Me.BackButton.Location = New System.Drawing.Point(13, 13)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(31, 31)
@@ -228,7 +238,15 @@ Partial Class Form1
         'PageConfirm
         '
         Me.PageConfirm.BackColor = System.Drawing.Color.Transparent
+        Me.PageConfirm.Controls.Add(Me.ReduceWinX)
+        Me.PageConfirm.Controls.Add(Me.DisableLockScreen)
+        Me.PageConfirm.Controls.Add(Me.AllowUserCPL)
         Me.PageConfirm.Controls.Add(Me.AllowUXThemePatcher)
+        Me.PageConfirm.Controls.Add(Me.Allow7TaskManager)
+        Me.PageConfirm.Controls.Add(Me.AllowMediaCenter)
+        Me.PageConfirm.Controls.Add(Me.Allow7Gadgets)
+        Me.PageConfirm.Controls.Add(Me.Allow7Games)
+        Me.PageConfirm.Controls.Add(Me.AllowShell32)
         Me.PageConfirm.Controls.Add(Me.NextConfirm)
         Me.PageConfirm.Controls.Add(Me.Label16)
         Me.PageConfirm.Controls.Add(Me.Label17)
@@ -241,11 +259,46 @@ Partial Class Form1
         Me.PageConfirm.TabIndex = 11
         Me.PageConfirm.Visible = False
         '
+        'ReduceWinX
+        '
+        Me.ReduceWinX.AutoSize = True
+        Me.ReduceWinX.Enabled = False
+        Me.ReduceWinX.Location = New System.Drawing.Point(60, 314)
+        Me.ReduceWinX.Name = "ReduceWinX"
+        Me.ReduceWinX.Size = New System.Drawing.Size(103, 21)
+        Me.ReduceWinX.TabIndex = 35
+        Me.ReduceWinX.Text = "Go back now"
+        Me.ReduceWinX.UseVisualStyleBackColor = True
+        '
+        'DisableLockScreen
+        '
+        Me.DisableLockScreen.AutoCheck = False
+        Me.DisableLockScreen.AutoSize = True
+        Me.DisableLockScreen.Enabled = False
+        Me.DisableLockScreen.Location = New System.Drawing.Point(60, 342)
+        Me.DisableLockScreen.Name = "DisableLockScreen"
+        Me.DisableLockScreen.Size = New System.Drawing.Size(103, 21)
+        Me.DisableLockScreen.TabIndex = 34
+        Me.DisableLockScreen.Text = "Go back now"
+        Me.DisableLockScreen.UseVisualStyleBackColor = True
+        '
+        'AllowUserCPL
+        '
+        Me.AllowUserCPL.AutoSize = True
+        Me.AllowUserCPL.Enabled = False
+        Me.AllowUserCPL.Location = New System.Drawing.Point(60, 174)
+        Me.AllowUserCPL.Name = "AllowUserCPL"
+        Me.AllowUserCPL.Size = New System.Drawing.Size(103, 21)
+        Me.AllowUserCPL.TabIndex = 33
+        Me.AllowUserCPL.Text = "Go back now"
+        Me.AllowUserCPL.UseVisualStyleBackColor = True
+        '
         'AllowUXThemePatcher
         '
         Me.AllowUXThemePatcher.AutoSize = True
         Me.AllowUXThemePatcher.Checked = True
         Me.AllowUXThemePatcher.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.AllowUXThemePatcher.Enabled = False
         Me.AllowUXThemePatcher.Location = New System.Drawing.Point(60, 118)
         Me.AllowUXThemePatcher.Name = "AllowUXThemePatcher"
         Me.AllowUXThemePatcher.Size = New System.Drawing.Size(365, 21)
@@ -253,14 +306,69 @@ Partial Class Form1
         Me.AllowUXThemePatcher.Text = "Patch your system with UXThemePatcher by Manuel Hoefs"
         Me.AllowUXThemePatcher.UseVisualStyleBackColor = True
         '
+        'Allow7TaskManager
+        '
+        Me.Allow7TaskManager.AutoSize = True
+        Me.Allow7TaskManager.Enabled = False
+        Me.Allow7TaskManager.Location = New System.Drawing.Point(60, 286)
+        Me.Allow7TaskManager.Name = "Allow7TaskManager"
+        Me.Allow7TaskManager.Size = New System.Drawing.Size(103, 21)
+        Me.Allow7TaskManager.TabIndex = 31
+        Me.Allow7TaskManager.Text = "Go back now"
+        Me.Allow7TaskManager.UseVisualStyleBackColor = True
+        '
+        'AllowMediaCenter
+        '
+        Me.AllowMediaCenter.AutoSize = True
+        Me.AllowMediaCenter.Enabled = False
+        Me.AllowMediaCenter.Location = New System.Drawing.Point(60, 258)
+        Me.AllowMediaCenter.Name = "AllowMediaCenter"
+        Me.AllowMediaCenter.Size = New System.Drawing.Size(103, 21)
+        Me.AllowMediaCenter.TabIndex = 30
+        Me.AllowMediaCenter.Text = "Go back now"
+        Me.AllowMediaCenter.UseVisualStyleBackColor = True
+        '
+        'Allow7Gadgets
+        '
+        Me.Allow7Gadgets.AutoSize = True
+        Me.Allow7Gadgets.Enabled = False
+        Me.Allow7Gadgets.Location = New System.Drawing.Point(60, 230)
+        Me.Allow7Gadgets.Name = "Allow7Gadgets"
+        Me.Allow7Gadgets.Size = New System.Drawing.Size(103, 21)
+        Me.Allow7Gadgets.TabIndex = 29
+        Me.Allow7Gadgets.Text = "Go back now"
+        Me.Allow7Gadgets.UseVisualStyleBackColor = True
+        '
+        'Allow7Games
+        '
+        Me.Allow7Games.AutoSize = True
+        Me.Allow7Games.Enabled = False
+        Me.Allow7Games.Location = New System.Drawing.Point(60, 202)
+        Me.Allow7Games.Name = "Allow7Games"
+        Me.Allow7Games.Size = New System.Drawing.Size(103, 21)
+        Me.Allow7Games.TabIndex = 28
+        Me.Allow7Games.Text = "Go back now"
+        Me.Allow7Games.UseVisualStyleBackColor = True
+        '
+        'AllowShell32
+        '
+        Me.AllowShell32.AutoSize = True
+        Me.AllowShell32.Enabled = False
+        Me.AllowShell32.Location = New System.Drawing.Point(61, 146)
+        Me.AllowShell32.Name = "AllowShell32"
+        Me.AllowShell32.Size = New System.Drawing.Size(103, 21)
+        Me.AllowShell32.TabIndex = 27
+        Me.AllowShell32.Text = "Go back now"
+        Me.AllowShell32.UseVisualStyleBackColor = True
+        '
         'NextConfirm
         '
         Me.NextConfirm.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.NextConfirm.BackColor = System.Drawing.SystemColors.Control
         Me.NextConfirm.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.NextConfirm.Location = New System.Drawing.Point(59, 326)
+        Me.NextConfirm.Location = New System.Drawing.Point(652, 563)
         Me.NextConfirm.Name = "NextConfirm"
-        Me.NextConfirm.Size = New System.Drawing.Size(630, 45)
+        Me.NextConfirm.Size = New System.Drawing.Size(103, 28)
         Me.NextConfirm.TabIndex = 3
         Me.NextConfirm.Text = "Transform"
         Me.NextConfirm.UseVisualStyleBackColor = True
@@ -288,11 +396,12 @@ Partial Class Form1
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(56, 231)
+        Me.Label12.Location = New System.Drawing.Point(58, 384)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(633, 68)
+        Me.Label12.Size = New System.Drawing.Size(561, 51)
         Me.Label12.TabIndex = 20
-        Me.Label12.Text = resources.GetString("Label12.Text")
+        Me.Label12.Text = "This is your last chance to go back" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Once started, the transformation process c" & _
+            "annot be cancelled until it is complete. If you're sure"
         '
         'PageTransform
         '
@@ -313,7 +422,7 @@ Partial Class Form1
         'LabelStatus
         '
         Me.LabelStatus.AutoSize = True
-        Me.LabelStatus.Location = New System.Drawing.Point(56, 332)
+        Me.LabelStatus.Location = New System.Drawing.Point(58, 246)
         Me.LabelStatus.Name = "LabelStatus"
         Me.LabelStatus.Size = New System.Drawing.Size(207, 17)
         Me.LabelStatus.TabIndex = 25
@@ -322,7 +431,7 @@ Partial Class Form1
         'ProgressBar1
         '
         Me.ProgressBar1.BackColor = System.Drawing.SystemColors.Control
-        Me.ProgressBar1.Location = New System.Drawing.Point(59, 242)
+        Me.ProgressBar1.Location = New System.Drawing.Point(60, 205)
         Me.ProgressBar1.Maximum = 5
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(663, 32)
@@ -331,6 +440,7 @@ Partial Class Form1
         '
         'PictureBox7
         '
+        Me.PictureBox7.Image = Global.Longhornizer_Transformation_Pack.My.Resources.Resources.int_BackDisabled
         Me.PictureBox7.Location = New System.Drawing.Point(13, 13)
         Me.PictureBox7.Name = "PictureBox7"
         Me.PictureBox7.Size = New System.Drawing.Size(31, 31)
@@ -341,7 +451,7 @@ Partial Class Form1
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(58, 178)
+        Me.Label19.Location = New System.Drawing.Point(71, 178)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(637, 17)
         Me.Label19.TabIndex = 1
@@ -352,7 +462,7 @@ Partial Class Form1
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(269, 141)
+        Me.Label20.Location = New System.Drawing.Point(269, 129)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(242, 30)
         Me.Label20.TabIndex = 0
@@ -557,7 +667,14 @@ Partial Class Form1
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents ProgressBar1 As System.Windows.Forms.ProgressBar
     Friend WithEvents LabelStatus As System.Windows.Forms.Label
+    Friend WithEvents AllowShell32 As System.Windows.Forms.CheckBox
+    Friend WithEvents Allow7Games As System.Windows.Forms.CheckBox
+    Friend WithEvents Allow7TaskManager As System.Windows.Forms.CheckBox
+    Friend WithEvents AllowMediaCenter As System.Windows.Forms.CheckBox
+    Friend WithEvents Allow7Gadgets As System.Windows.Forms.CheckBox
     Friend WithEvents AllowUXThemePatcher As System.Windows.Forms.CheckBox
+    Friend WithEvents AllowUserCPL As System.Windows.Forms.CheckBox
+    Friend WithEvents DisableLockScreen As System.Windows.Forms.CheckBox
     Friend WithEvents MediaCenterTooltip As System.Windows.Forms.ToolTip
     Friend WithEvents Shell32Tooltip As System.Windows.Forms.ToolTip
     Friend WithEvents Label21 As System.Windows.Forms.Label
@@ -572,6 +689,7 @@ Partial Class Form1
     Friend WithEvents Label23 As System.Windows.Forms.Label
     Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
+    Friend WithEvents ReduceWinX As System.Windows.Forms.CheckBox
     Friend WithEvents secret As System.Windows.Forms.TextBox
     Friend WithEvents BackButton As System.Windows.Forms.PictureBox
 

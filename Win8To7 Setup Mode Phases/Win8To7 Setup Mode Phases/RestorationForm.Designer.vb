@@ -140,10 +140,10 @@ Partial Class RestorationForm
         Me.BackColor = System.Drawing.Color.Black
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(863, 680)
+        Me.Controls.Add(Me.FakeIntro)
         Me.Controls.Add(Me.CustomisingMode)
         Me.Controls.Add(Me.ProgressAnim)
         Me.Controls.Add(Me.LabelStatus)
-        Me.Controls.Add(Me.FakeIntro)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

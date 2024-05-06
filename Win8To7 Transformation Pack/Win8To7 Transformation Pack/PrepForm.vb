@@ -14,13 +14,9 @@ high contrast.</a>
 
     Private Sub PrepForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'First, error out on incompatible versions
-        If Not System.Environment.OSVersion.Version.Major = 6 Or (System.Environment.OSVersion.Version.Minor > 0) Then
+        If Not System.Environment.OSVersion.Version.Major = 6 Or (System.Environment.OSVersion.Version.Major = 6 And (System.Environment.OSVersion.Version.Minor < 0)) Then
             Me.Hide()
             SetThemeAppProperties(0)
-            MsgBox("This transformation pack is only compatible with Windows Vista Extended Kernel.", MsgBoxStyle.Critical, "Unsupported OS")
-            End
-        End If
-        If Environment.Is64BitOperatingSystem = False Then
             MsgBox("This transformation pack is only compatible with Windows Vista Extended Kernel.", MsgBoxStyle.Critical, "Unsupported OS")
             End
         End If

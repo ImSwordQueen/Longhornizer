@@ -1,5 +1,5 @@
-# Longhornizer Transformation Pack
+# Longhornizer Transformation Pack - April Fools 2023 Joke Edition
 
-## Warning: Unfinished Code. This is a scrapped project so it won't get any updates.
+## Warning: This build will not actually install Longhornizer. Second phase was the joke.
 
 Based on Win8to7 Backend.

@@ -128,7 +128,7 @@
     <value>..\Resources\all_all_all_all_all_setupfile_UXThemePatcher.exe.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="all_all_all_SMOpenShell_all_setupfile:OpenShellSetup.exe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\all_all_all_SMOpenShell_all_setupfile_OpenShellSetup.exe.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\all_all_all_SMOpenShell_all_setupfile_OpenShellSetup_4_4_160.exe.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="int_BackDisabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\int_BackDisabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,10 +151,19 @@
   <data name="i386_all_all_all_all_setuptool:regchange.exe" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\i386_all_all_all_all_setuptool_regchange.exe.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="int_PreSetupBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\int_PreSetupBG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eggnog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eggnog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="int_winbranding" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\int_winbranding.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pepe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pepe.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Phonk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Phonk.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="shutdown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shutdown.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tada" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tada.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
