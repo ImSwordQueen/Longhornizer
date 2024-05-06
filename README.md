@@ -1,5 +1,7 @@
 # Longhornizer Transformation Pack
 
-## Warning: Unfinished Code. This is a scrapped project so it won't get any updates.
+## Warning: Scrapped unfinished project. It is released as-is.
 
-Based on Win8to7 Backend.
+### Explanation for the 2 branches:
+- **Longhornizer-SRC**: The main SRC of Longhornizer. (Self-Explanatory)
+- **Longhornizer-SRC-AprilFools2023Joke**: Older build of Longhornizer with a slightly modified setup that would BSOD your pc after the long waiting game ends.
